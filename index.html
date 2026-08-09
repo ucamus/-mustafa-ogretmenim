@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mustafa ❤️ Öğretmenim</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Georgia,serif;background:linear-gradient(145deg,#fff7f9,#f5e3e9);color:#42252f}.wrap{max-width:720px;margin:auto;padding:20px}.card{background:#fff;border-radius:28px;padding:25px;margin:15px 0;box-shadow:0 15px 40px #641d3520}.start{text-align:center;margin-top:8vh}.heart{font-size:65px}h1{color:#641d35;font-size:40px;margin:10px}.subtitle{font-size:18px;line-height:1.6}.note{background:#fff1f5;padding:16px;border-radius:18px;line-height:1.6;margin:20px 0}input{width:100%;padding:16px;border:1px solid #dfc5ce;border-radius:15px;font-size:17px}button{border:0;border-radius:999px;background:#641d35;color:#fff;padding:14px 22px;font-size:17px;cursor:pointer;margin-top:12px}.hidden{display:none}.top{position:sticky;top:8px;z-index:5;background:#fffffff2;padding:13px;border-radius:17px;box-shadow:0 5px 20px #641d3515}.progress{height:7px;background:#eadde1;border-radius:10px;margin-top:8px}.bar{height:100%;width:0;background:#a43a5a;border-radius:10px}.option{display:block;width:100%;text-align:left;background:#fff;color:#42252f;border:1px solid #decbd2;border-radius:14px;margin:10px 0}.option.correct{background:#e7f7ef!important;color:#176548!important;border-color:#67ad91}.option.wrong{background:#ffedef!important;color:#963b46!important;border-color:#d6858e}.explanation{display:none;background:#fff1f5;border-left:4px solid #a43a5a;padding:15px;border-radius:12px;line-height:1.6}.explanation.show{display:block}.result{text-align:center}.big{font-size:65px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section id="start" class="card start">
+<div class="heart">❤️</div><h1>Mustafa ❤️ Öğretmenim</h1>
+<p class="subtitle">Dünyanın en güzel Türkçe öğretmenine özel<br><strong>Kalpten Hazırlanmış LGS</strong></p>
+<div class="note">📚 <strong>10 soru · 100 puan</strong><br><br>Şıklara dokun, puanını topla ve her sorudan sonra sana özel açıklamayı oku. 🌹<br><br><strong>Uyarı:</strong> Bu sınav kalp çarpıntısına sebep olabilir. ❤️</div>
+<input id="name" placeholder="Öğretmenimin adını yaz ❤️"><br><button id="startBtn" type="button">Sınava Başla 💌</button><p id="error" style="color:#a43a5a"></p>
+</section>
+<section id="quizScreen" class="hidden">
+<div class="top"><div><strong id="student"></strong><span style="float:right">Puan: <strong id="score">0</strong>/100</span></div><div class="progress"><div id="bar" class="bar"></div></div></div>
+<div id="quiz"></div>
+<section id="result" class="card result hidden"><div class="big">🎓❤️</div><h2 id="resultTitle"></h2><p id="resultText"></p><div class="note"><strong>ÖDÜLÜN:</strong><br><br>Mustafa'dan sınırsız sarılma hakkı. 🤗❤️<br><br>Geçerlilik: <strong>ömür boyu.</strong><br>İptal: <strong>mümkün değil.</strong></div><p><strong>LGS'yi değil, Mustafa'nın kalbini kazandın.</strong></p><p><i>“Seni her gün yeniden seçen Mustafa.” ❤️</i></p></section>
+</section></div>
+<script>
+const qs=[
+["SÖZCÜKTE ANLAM","“Sen bana kalbini açtığın gün, hayatımın en güzel sayfası başladı.” cümlesinde “açmak” hangi anlamdadır?",["Kapalı bir şeyi açmak","Bir konuyu anlatmaya başlamak","İç dünyasını birine göstermek","Bir çiçeğin açmasını sağlamak"],2,"Doğru cevap C. “Kalbini açmak”, iç dünyasını göstermek anlamındadır. Sen Mustafa'nın hayatında açan en güzel çiçeksin. 🌸"],
+["CÜMLEDE ANLAM","“İnsan bazı insanları tanıdıkça sever, bazılarını sevdikçe tanır.” cümlesinden hangisi çıkarılabilir?",["Her tanıdığımız insanı severiz.","Sevgi ve tanıma arasında güçlü bir bağ vardır.","İnsanları tanımak gereksizdir.","Sevgi tamamen mantık işidir."],1,"Doğru cevap B. Mustafa seni tanıdıkça daha çok sevdi, sevdikçe seni daha çok tanımak istedi. ❤️"],
+["PARAGRAFTA ANA FİKİR","Kaktüs çiçeğinin dikenlerin arasında açması bize neyi anlatır?",["Dikenler güzeldir.","Güzel şeyler için bazen sabretmek gerekir.","Bütün çiçekler aynı zamanda açar.","Kaktüs yetiştirmek kolaydır."],1,"Doğru cevap B. Bazı güzellikler sabırla ortaya çıkar. Sen de Mustafa'nın hayatında dikenlerin arasında açan en güzel çiçeksin. 🌵❤️"],
+["FİİLİMSİ","“Seni tanımak, seninle konuşmak ve gülümsemek benim en sevdiğim şeylerdendir.” cümlesinde kaç isim-fiil vardır?",["1","2","3","4"],2,"Doğru cevap C. “Tanımak, konuşmak, gülümsemek” isim-fiildir. Konu fiilimsi ama Mustafa'nın asıl konusu sensin. ❤️"],
+["NOKTALAMA","“Seni ne kadar sevdiğimi biliyor musun__” sonuna hangi işaret gelir?",[".","!","?","..."],2,"Doğru cevap C. Bu bir soru cümlesidir. Ama Mustafa'nın sevgisi hiçbir noktalama işaretine sığmaz. ❤️"],
+["YAZIM KURALLARI","Hangisinde yazım yanlışı vardır?",["Seni her gün biraz daha seviyorum.","İyi ki hayatımdasın.","İyiki seni tanımışım.","Seninle geçen zaman çok kıymetli."],2,"Doğru cevap C. Doğrusu “İyi ki seni tanımışım.” Mustafa'nın hayatındaki en güzel doğrulardan biri. ❤️"],
+["PARAGRAF","Bazı insanlar hayatımıza tesadüfen girer ve zamanla vazgeçilmezimiz olur. Ana düşünce nedir?",["İnsanlar zamanla değişir.","Tesadüfler her zaman kötüdür.","Bazı insanlar hayatımızın vazgeçilmezi olur.","İnsan yalnız yaşamalıdır."],2,"Doğru cevap C. O paragraftaki kişi sensin. Bir zamanlar Mustafa'nın hayatında olmayan sen, şimdi onun için vazgeçilmezsin. 🥹"],
+["SÖZ SANATLARI","“Gülüşün, karanlık gecede içime doğan güneş gibidir.” hangi söz sanatıdır?",["Benzetme","Tezat","Kişileştirme","Abartma"],0,"Doğru cevap A. “Gibi” sözcüğü benzetme yapıyor. Ama Mustafa senin gülüşünü hiçbir şeye tam benzetemiyor; çünkü sen biriciksin. ☀️❤️"],
+["GERÇEK SEVGİ","Gerçek sevgi aşağıdakilerden hangisidir?",["Sadece güzel günlerde yanında olmak","Sürekli romantik sözler söylemek","Karşındaki insanın her hâlinde yanında olmak","Hiç tartışmamak"],2,"Doğru cevap C. Mustafa seni sadece gülerken değil, sustuğunda da sevmek ve yorulduğunda elinden tutmak istiyor. ❤️"],
+["FİNAL SORUSU ❤️","Bu sınavın en doğru cevabı hangisidir?",["Seni seviyorum.","Seni çok seviyorum.","Seni her geçen gün daha çok seviyorum.","Yukarıdakilerin hepsi."],3,"Doğru cevap D. Ama asıl cevap şıklarda yok. Mustafa'nın sevgisi bir sınava sığmaz. Seni her gün yeniden seçiyor. ❤️"]
+];
+let score=0,done=0,name="";
+const $=id=>document.getElementById(id);
+$("startBtn").onclick=start;
+$("name").onkeydown=e=>{if(e.key==="Enter")start()};
+function start(){name=$("name").value.trim();if(!name){$("error").textContent="Önce adını yazmalısın öğretmenim. ❤️";return}$("start").classList.add("hidden");$("quizScreen").classList.remove("hidden");$("student").textContent=name+" ❤️";render()}
+function render(){qs.forEach((q,i)=>{let c=document.createElement("div");c.className="card";c.innerHTML="<small>SORU "+(i+1)+" / 10 · "+q[0]+"</small><h2>"+q[1]+"</h2><div class='options'></div><div class='explanation'></div>";let os=c.querySelector(".options");q[2].forEach((x,j)=>{let b=document.createElement("button");b.className="option";b.textContent=String.fromCharCode(65+j)+") "+x;b.onclick=()=>answer(q,j,c);os.appendChild(b)});$("quiz").appendChild(c)})}
+function answer(q,j,c){let bs=[...c.querySelectorAll(".option")];if(bs[0].disabled)return;bs.forEach(b=>b.disabled=true);bs[q[3]].classList.add("correct");let ok=j===q[3];if(!ok)bs[j].classList.add("wrong");if(ok)score+=10;done++;let e=c.querySelector(".explanation");e.innerHTML=(ok?"✅ <strong>Doğru cevap!</strong><br>":"💗 <strong>Bu kez olmadı.</strong><br>Doğru cevap gösterildi.<br>")+q[4];e.classList.add("show");$("score").textContent=score;$("bar").style.width=done*10+"%";if(done===10)finish()}
+function finish(){$("result").classList.remove("hidden");$("resultTitle").textContent=score===100?"100 PUAN! 🎓❤️":score>=80?"Harika! ❤️":score>=60?"Güzel sonuç! 🌹":"Puan ikinci planda. 🥹";$("resultText").textContent=name+", sınav sonucundan bağımsız olarak Mustafa'nın kalp sınavında zaten tam puanlıksın. Seni her gün yeniden seçiyor. ❤️";$("result").scrollIntoView({behavior:"smooth"})}
+</script>
+</body>
+</html>
